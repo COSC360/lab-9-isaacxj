@@ -5,7 +5,21 @@
 <script type="text/javascript" src="scripts/validate.js"></script>
 
 <!-- Password checking script here!! -->
-
+<script>
+  function checkPasswordMatch(e) {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("password-check").value;
+    var passwordField = document.getElementById("password");
+    var confirmPasswordField = document.getElementById("password-check");
+  
+    if (password != confirmPassword) {
+      makeRed(passwordField);
+      makeRed(confirmPasswordField);
+      alert("Passwords do not match!");
+      e.preventDefault();
+    }
+  }
+  </script>
 </head>
 
 <body>
